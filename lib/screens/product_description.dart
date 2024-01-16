@@ -14,8 +14,10 @@ class ProductDeatails extends StatefulWidget {
   _ProductDeatailsState createState() => _ProductDeatailsState();
 }
 
+// hello
 class _ProductDeatailsState extends State<ProductDeatails> {
   bool isexpanded = false;
+
   Color col = Colors.white;
   @override
   Widget build(context) {
@@ -49,6 +51,11 @@ class _ProductDeatailsState extends State<ProductDeatails> {
         ),
         child: Center(
           child: Consumer<cartProvider>(builder: (context, cartModel, child) {
+            if (cartModel.myCart.contains(widget.Product)) {
+              isexpanded = true;
+            }
+            ;
+
             return Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
